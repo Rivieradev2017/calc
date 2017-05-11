@@ -18,8 +18,11 @@ app.get('/add/:a/:b', (req, res) => {
   });
 });
 
-
-
+app.get('/multiply/:a/:b', (req, res) => {
+  res.send({
+    result: calc.multiply(Number(req.params.a), Number(req.params.b))
+  });
+});
 
 app.listen(port);
 console.log(`🌍 Web Application is started - listening on ${port}`);
